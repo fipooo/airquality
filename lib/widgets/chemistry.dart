@@ -15,7 +15,7 @@ class Chemistry extends StatelessWidget {
         borderRadius: BorderRadius.all(Radius.circular(5.0))
       ),
       child: Center(
-        child: Text(elementName),
+        child: Text(elementName, style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 15),),
       ),
     );
   }

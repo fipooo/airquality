@@ -2,7 +2,7 @@ import 'package:airquality/api/airQuality.dart';
 import 'package:airquality/api/stations.dart';
 import 'package:airquality/model/airIndex.dart';
 import 'package:airquality/model/station.dart';
-import 'package:airquality/pages/searchPage.dart';
+import 'package:airquality/pages/showPage.dart';
 import 'package:airquality/provider/appProvider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -23,6 +23,8 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primaryColor: Color.fromRGBO(78, 72, 115, 1),
           accentColor: Color.fromRGBO(242, 128, 87, 1),
+          cardColor: Color.fromRGBO(242, 231, 220, 1),
+          errorColor: Color.fromRGBO(217, 72, 72, 1),
           accentIconTheme: IconThemeData(color: Colors.white),
           primarySwatch: Colors.blue,
           canvasColor: Colors.transparent,
@@ -67,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     Future.delayed(Duration(seconds: 2), (){
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (_)=> SearchPage()));
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (_)=> ShowPage()));
     });
     super.initState();
   }

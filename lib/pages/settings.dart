@@ -4,6 +4,7 @@ import 'package:airquality/api/stations.dart';
 import 'package:airquality/provider/appProvider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
 
 class SettingsSheet extends StatefulWidget {
@@ -19,7 +20,6 @@ class _SettingsSheetState extends State<SettingsSheet> {
 
 
   checkCitiesList()async{
-    print(widget.appConsumer.stationList);
     if(widget.appConsumer.stationList == null){
       widget.appProvider.stationList = await Stations().getStations();
     }
@@ -38,6 +38,7 @@ class _SettingsSheetState extends State<SettingsSheet> {
     AppProvider appProvider = Provider.of<AppProvider>(context);
 
     return Scaffold(
+      resizeToAvoidBottomInset:  false,
       appBar: AppBar(
         backgroundColor: Theme.of(context).primaryColor,
       ),
@@ -62,7 +63,6 @@ class _SettingsSheetState extends State<SettingsSheet> {
                     },
                     onEditingComplete: (){
                       appProvider.searchInCities(_textEditingController.text);
-                      print(_textEditingController.text);
                     },
                     decoration: new InputDecoration(
                         border: new OutlineInputBorder(
@@ -87,12 +87,40 @@ class _SettingsSheetState extends State<SettingsSheet> {
                   children: List.generate(appConsumer.searchStation == null ? 0 : appConsumer.searchStation.length, (index){
                     return  GestureDetector(
                       onTap: () async {
+                        showGeneralDialog(
+                            context: context,
+                            barrierColor: Colors.black12.withOpacity(0.3), // background color
+                            barrierDismissible: false, // should dialog be dismissed when tapped outside
+                            transitionDuration: Duration(milliseconds: 200), // how long it takes to popup dialog after button click
+                            pageBuilder: (_, __, ___) { // your widget implementation
+                              return SizedBox.expand( // makes widget fullscreen
+                                child: Center(
+                                  child: Container(
+                                    width: 500,
+                                    height: 500,
+                                    child: SpinKitWave(
+                                      itemBuilder: (BuildContext context, int index) {
+                                        return DecoratedBox(
+                                          decoration: BoxDecoration(
+                                            color: index.isEven ? Theme.of(context).accentColor : Theme.of(context).primaryColor,
+                                          ),
+                                        );
+                                      },
+                                ),
+                                  ),
+                                ),
+                              );
+                            }
+                            );
                         SharedPreferencesChecker().saveCity(appConsumer.searchStation[index].city.name);
                         SharedPreferencesChecker().saveStationId(appConsumer.searchStation[index].id);
                         appProvider.airIndex = await AirQuality().getAirQuality(appConsumer.searchStation[index].id);
                         appProvider.city = appConsumer.searchStation[index].city;
                         appProvider.station = appConsumer.searchStation[index];
-                        Navigator.pop(context);
+                        Future.delayed(Duration(seconds: 2), (){
+                          Navigator.pop(context);
+                          Navigator.pop(context);
+                        });
                       },
                       child: Container(
                         decoration: BoxDecoration(

@@ -24,7 +24,6 @@ class AirQuality {
       // then parse the JSON.
       var airIndexResponse = json.decode(response.body);
 
-      print(airIndexResponse['pm10IndexLevel']);
 
       airIndex = new AirIndex(
           stIndexLevel: airIndexResponse['stIndexLevel'] != null ?StIndexLevel(
