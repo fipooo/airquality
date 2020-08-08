@@ -1,14 +1,10 @@
-import 'package:airquality/api/spChecker.dart';
-import 'package:airquality/api/stations.dart';
-import 'package:airquality/model/station.dart';
+import 'package:airquality/services/spChecker.dart';
 import 'package:airquality/provider/appProvider.dart';
 import 'package:airquality/widgets/appBar.dart';
 import 'package:airquality/widgets/card.dart';
-import 'package:airquality/pages/settings.dart';
 import 'package:airquality/widgets/cardList.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:reorderables/reorderables.dart';
 
 class ShowPage extends StatefulWidget {
   @override

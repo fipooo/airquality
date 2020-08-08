@@ -1,4 +1,3 @@
-import 'package:airquality/api/stations.dart';
 import 'package:airquality/provider/appProvider.dart';
 import 'package:airquality/widgets/menuButton.dart';
 import 'package:airquality/pages/settings.dart';

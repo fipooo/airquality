@@ -1,7 +1,3 @@
-import 'package:airquality/api/airQuality.dart';
-import 'package:airquality/api/stations.dart';
-import 'package:airquality/model/airIndex.dart';
-import 'package:airquality/model/station.dart';
 import 'package:airquality/pages/showPage.dart';
 import 'package:airquality/provider/appProvider.dart';
 import 'package:flutter/material.dart';
@@ -55,16 +51,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-  List<Station> stationsL = new List();
-
-  void _incrementCounter() async {
-    //stationsL = await Stations().getStations();
-    //stationsL.forEach((element) {print(element.city.name);});
-    setState(() {
-      _counter++;
-    });
-  }
 
   @override
   void initState() {

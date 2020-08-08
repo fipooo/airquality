@@ -1,6 +1,6 @@
-import 'package:airquality/api/airQuality.dart';
-import 'package:airquality/api/spChecker.dart';
-import 'package:airquality/api/stations.dart';
+import 'package:airquality/services/airQuality.dart';
+import 'package:airquality/services/spChecker.dart';
+import 'package:airquality/services/stations.dart';
 import 'package:airquality/provider/appProvider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

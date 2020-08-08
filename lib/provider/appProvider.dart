@@ -2,7 +2,6 @@ import 'package:airquality/model/airIndex.dart';
 import 'package:airquality/model/city.dart';
 import 'package:airquality/model/station.dart';
 import 'package:flutter/widgets.dart';
-import 'package:provider/provider.dart';
 
 class AppProvider extends ChangeNotifier{
   bool _menu;
