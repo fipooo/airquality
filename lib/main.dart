@@ -1,4 +1,4 @@
-import 'package:airquality/pages/showPage.dart';
+import 'package:airquality/screens/showPage.dart';
 import 'package:airquality/provider/appProvider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

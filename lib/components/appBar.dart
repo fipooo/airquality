@@ -1,6 +1,6 @@
 import 'package:airquality/provider/appProvider.dart';
 import 'package:airquality/components/menuButton.dart';
-import 'package:airquality/pages/settings.dart';
+import 'package:airquality/screens/settings.dart';
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget {
