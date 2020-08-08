@@ -1,5 +1,5 @@
 import 'package:airquality/provider/appProvider.dart';
-import 'package:airquality/widgets/chemistry.dart';
+import 'package:airquality/components/chemistry.dart';
 import 'package:flutter/material.dart';
 
 class CustomCardWidget extends StatefulWidget {

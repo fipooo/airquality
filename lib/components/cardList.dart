@@ -1,4 +1,4 @@
-import 'package:airquality/widgets/card.dart';
+import 'package:airquality/components/card.dart';
 import 'package:flutter/material.dart';
 import 'package:reorderables/reorderables.dart';
 

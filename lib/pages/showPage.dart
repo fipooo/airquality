@@ -1,8 +1,8 @@
 import 'package:airquality/services/spChecker.dart';
 import 'package:airquality/provider/appProvider.dart';
-import 'package:airquality/widgets/appBar.dart';
-import 'package:airquality/widgets/card.dart';
-import 'package:airquality/widgets/cardList.dart';
+import 'package:airquality/components/appBar.dart';
+import 'package:airquality/components/card.dart';
+import 'package:airquality/components/cardList.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
