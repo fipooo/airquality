@@ -1,6 +1,6 @@
 # airquality
 
-A new Flutter application.
+Prosta aplikacja wykorzystująca API do sprawdzania stanu powietrza w Polsce.
 
 ## Getting Started
 
